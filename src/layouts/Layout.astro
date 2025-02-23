@@ -14,23 +14,23 @@ import { ClientRouter } from "astro:transitions";
         <meta name="generator" content={Astro.generator} />
         <title>Tom Watkins</title>
         <script is:inline>
-            // Necessary for view transitions
-            document.addEventListener("astro:after-swap", () => {
-                if (
+            function darkMode() {
+                return (
                     localStorage.theme === "dark" ||
                     (!("theme" in localStorage) &&
                         window.matchMedia("(prefers-color-scheme: dark)")
                             .matches)
-                ) {
+                );
+            }
+
+            // Necessary for view transitions
+            document.addEventListener("astro:after-swap", () => {
+                if (darkMode()) {
                     document.documentElement.classList.add("dark");
                 }
             });
 
-            if (
-                localStorage.theme === "dark" ||
-                (!("theme" in localStorage) &&
-                    window.matchMedia("(prefers-color-scheme: dark)").matches)
-            ) {
+            if (darkMode()) {
                 document.documentElement.classList.add("dark");
             } else {
                 document.documentElement.classList.remove("dark");
