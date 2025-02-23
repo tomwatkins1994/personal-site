@@ -2,6 +2,7 @@
 import "../styles/global.css";
 
 import Header from "../components/Header.astro";
+import { ClientRouter } from "astro:transitions";
 ---
 
 <!doctype html>
@@ -12,6 +13,30 @@ import Header from "../components/Header.astro";
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
         <title>Tom Watkins</title>
+        <script is:inline>
+            // Necessary for view transitions
+            document.addEventListener("astro:after-swap", () => {
+                if (
+                    localStorage.theme === "dark" ||
+                    (!("theme" in localStorage) &&
+                        window.matchMedia("(prefers-color-scheme: dark)")
+                            .matches)
+                ) {
+                    document.documentElement.classList.add("dark");
+                }
+            });
+
+            if (
+                localStorage.theme === "dark" ||
+                (!("theme" in localStorage) &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches)
+            ) {
+                document.documentElement.classList.add("dark");
+            } else {
+                document.documentElement.classList.remove("dark");
+            }
+        </script>
+        <ClientRouter />
     </head>
     <body>
         <Header />
@@ -25,5 +50,11 @@ import Header from "../components/Header.astro";
         margin: 0;
         width: 100%;
         height: 100%;
+    }
+    html.dark {
+        body {
+            background-color: black;
+            color: white;
+        }
     }
 </style>

@@ -2,9 +2,11 @@
 import githubLogo from "../assets/github.svg";
 import xLogo from "../assets/x.svg";
 import linkedInLogo from "../assets/linkedin.svg";
+import ThemeButton from "../components/ThemeButton.svelte";
 ---
 
 <nav class="w-full flex flex-row justify-end px-6 py-4 gap-2">
+    <ThemeButton client:load />
     <a href="https://github.com/tomwatkins1994"
         ><img
             class="icon-link"
