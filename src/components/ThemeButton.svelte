@@ -1,7 +1,7 @@
 <script lang="ts">
     import { onMount } from "svelte";
 
-    let darkMode = false;
+    let darkMode = $state(false);
     let body: HTMLBodyElement;
 
     onMount(() => {
@@ -26,7 +26,7 @@
 <button
     class="dark-mode-button"
     aria-label={`Switch to ${darkMode ? "light" : "dark"} mode`}
-    on:click={handleClick}
+    onclick={handleClick}
 >
 </button>
 
