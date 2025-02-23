@@ -1,31 +1,17 @@
 ---
-import githubLogo from "../assets/github.svg";
-import xLogo from "../assets/x.svg";
-import linkedInLogo from "../assets/linkedin.svg";
 import ThemeButton from "../components/ThemeButton.svelte";
+import GitHubLogo from "./logos/GitHubLogo.astro";
+import XLogo from "./logos/XLogo.astro";
+import LinkedInLogo from "./logos/LinkedInLogo.astro";
 ---
 
 <nav class="w-full flex flex-row justify-end px-6 py-4 gap-2">
     <ThemeButton client:load />
-    <a href="https://github.com/tomwatkins1994"
-        ><img
-            class="icon-link"
-            src={githubLogo.src}
-            alt="GitHub"
-            height="32"
-        /></a
-    >
-    <a href="https://x.com/TomWatkins1994"
-        ><img class="icon-link" src={xLogo.src} alt="GitHub" height="32" /></a
-    >
-    <a href="https://www.linkedin.com/in/thomas-watkins-b684409a/"
-        ><img
-            class="icon-link"
-            src={linkedInLogo.src}
-            alt="GitHub"
-            height="32"
-        /></a
-    >
+    <a href="https://github.com/tomwatkins1994"><GitHubLogo /></a>
+    <a href="https://x.com/TomWatkins1994"><XLogo /></a>
+    <a href="https://www.linkedin.com/in/thomas-watkins-b684409a/">
+        <LinkedInLogo />
+    </a>
 </nav>
 
 <style>
