@@ -11,15 +11,9 @@
 
     function handleClick() {
         body.style.transition = "color .1s, background-color .3s";
-        if (darkMode) {
-            document.documentElement.classList.remove("dark");
-            localStorage.theme = "light";
-            darkMode = false;
-        } else {
-            document.documentElement.classList.add("dark");
-            localStorage.theme = "dark";
-            darkMode = true;
-        }
+        document.documentElement.classList.toggle("dark", !darkMode);
+        localStorage.theme = darkMode ? "light" : "dark";
+        darkMode = !darkMode;
     }
 </script>
 
