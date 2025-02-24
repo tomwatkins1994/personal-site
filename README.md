@@ -1,6 +1,6 @@
 # Personal Site
 
-This is the repo for my personal site, built using Astro. Still in construction.
+This is the repo for my personal site, built using Astro with Svelte for client side interactivity. Still in construction.
 
 ## 🧞 Commands
 
