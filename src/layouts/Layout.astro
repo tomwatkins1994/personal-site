@@ -34,7 +34,9 @@ import { ClientRouter } from "astro:transitions";
     </head>
     <body class="bg-white text-black dark:bg-zinc-900 dark:text-white">
         <Header />
-        <slot />
+        <main class="p-10">
+            <slot />
+        </main>
     </body>
 </html>
 
