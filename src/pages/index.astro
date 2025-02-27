@@ -5,11 +5,25 @@ import Layout from "../layouts/Layout.astro";
 <Layout>
     <div class="w-full flex justify-center">
         <div class="container justify-center">
-            <h1 class="text-4xl font-bold cm:tracking-tight">Tom Watkins</h1>
-            <h2 class="text-2xl text-gray dark:text-gray-500">
+            <h1 class="text-4xl font-bold sm:tracking-tight">Tom Watkins</h1>
+            <h2
+                class="text-2xl text-gray tracking-tight dark:text-gray-500 mb-4"
+            >
                 Senior Software Engineer
             </h2>
-            <article></article>
+            <article class="leading-6">
+                <p>
+                    Hey, my name's Tom Watkins and I'm a Senior Software
+                    Engineer working at <a
+                        href="https://www.madetech.com/"
+                        class="inline-flex items-center gap-1 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 font-medium rounded px-1.5 py-0.5 text-sm translate-y-1.5 tracking-tighter"
+                        ><img
+                            src="https://www.madetech.com/wp-content/uploads/2024/10/cropped-madetech-favicon-192x192.png"
+                            class="size-6"
+                        /> Made Tech</a
+                    > in the UK.
+                </p>
+            </article>
         </div>
     </div>
 </Layout>
